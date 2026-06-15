@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RingReady — Never Miss a Job Again</title>
+  <meta name="description" content="RingReady answers every missed call, qualifies your leads, and books the job automatically. The AI front desk for trades and local service businesses." />
+  <meta property="og:title" content="RingReady — Never Miss a Job Again" />
+  <meta property="og:description" content="Your AI answers every call. Qualifies every lead. Books every job. While you're on site." />
+  <meta property="og:url" content="https://getringready.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2300D68F'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,Arial,sans-serif' font-weight='800' font-size='18' fill='%230F1117'%3ER%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="RingReady home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="28" height="28" rx="7" fill="#00D68F"/>
+          <text x="14" y="20" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="16" fill="#0F1117">R</text>
+        </svg>
+        <span>Ring<strong>Ready</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#start" class="btn btn-ghost">Log in</a>
+        <a href="#start" class="btn btn-primary">Start free trial</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#start" class="btn btn-primary" style="margin-top:8px">Start free trial</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        AI front desk for trades &amp; local businesses
+      </div>
+      <h1 class="hero-headline">
+        Every missed call<br>
+        <span class="accent">is a missed job.</span>
+      </h1>
+      <p class="hero-sub">
+        RingReady answers your calls, qualifies the lead, and books the appointment — automatically. While you're on the tools, not the phone.
+      </p>
+      <div class="hero-actions">
+        <a href="#start" class="btn btn-primary btn-lg">
+          Start free — no card needed
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how" class="btn btn-outline btn-lg">See how it works</a>
+      </div>
+      <p class="hero-trust">No setup fee · Works in under 10 minutes · Cancel anytime</p>
+
+      <!-- STAT BAR -->
+      <div class="stat-bar">
+        <div class="stat">
+          <span class="stat-num">£54k</span>
+          <span class="stat-label">Average annual revenue lost to missed calls</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">&lt;60s</span>
+          <span class="stat-label">Response time with RingReady vs. hours without</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Always on — even at 11pm on a Sunday</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE DEMO WIDGET -->
+    <div class="container">
+      <div class="demo-card">
+        <div class="demo-header">
+          <div class="demo-dot red" aria-hidden="true"></div>
+          <div class="demo-dot amber" aria-hidden="true"></div>
+          <div class="demo-dot green" aria-hidden="true"></div>
+          <span class="demo-title">RingReady · Live conversation</span>
+        </div>
+        <div class="demo-body" id="demoBody">
+          <div class="demo-msg incoming">
+            <div class="demo-avatar" aria-hidden="true">📞</div>
+            <div class="demo-bubble">
+              Incoming call from <strong>+44 7712 ••••••</strong>
+              <span class="demo-time">Now</span>
+            </div>
+          </div>
+          <div class="demo-msg outgoing" id="d1" style="opacity:0">
+            <div class="demo-bubble green">
+              Hi there! You've reached Dave's Plumbing. I'm Dave's AI assistant — I can take your details and get you booked in. What's the issue you're having today?
+              <span class="demo-time">0:03</span>
+            </div>
+          </div>
+          <div class="demo-msg incoming" id="d2" style="opacity:0">
+            <div class="demo-bubble">
+              Boiler's making a banging noise, think it needs looking at urgently.
+              <span class="demo-time">0:18</span>
+            </div>
+          </div>
+          <div class="demo-msg outgoing" id="d3" style="opacity:0">
+            <div class="demo-bubble green">
+              Got it — sounds like it could be a faulty pump or air lock. I have tomorrow at 10am or Thursday at 2pm available. Which works best for you?
+              <span class="demo-time">0:21</span>
+            </div>
+          </div>
+          <div class="demo-msg incoming" id="d4" style="opacity:0">
+            <div class="demo-bubble">
+              Tomorrow 10am works perfectly.
+              <span class="demo-time">0:29</span>
+            </div>
+          </div>
+          <div class="demo-msg outgoing" id="d5" style="opacity:0">
+            <div class="demo-bubble green">
+              Booked! Confirmation text sent to your number. Dave will see you tomorrow at 10am. Anything else I can help with?
+              <span class="demo-time">0:32</span>
+            </div>
+          </div>
+          <div class="demo-notification" id="d6" style="opacity:0">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="#00D68F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Job booked · Calendar updated · Dave notified
+          </div>
+        </div>
+        <button class="demo-replay" onclick="replayDemo()" aria-label="Replay demo">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M11 6.5A4.5 4.5 0 112 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2 2v2.5H4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Replay
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF LOGOS -->
+  <section class="logos-bar">
+    <div class="container">
+      <p class="logos-label">Trusted by local businesses across the UK</p>
+      <div class="logos-row">
+        <span class="logo-pill">🔧 Pete's Plumbing</span>
+        <span class="logo-pill">⚡ Swift Electrics</span>
+        <span class="logo-pill">🏠 Clean Home Co</span>
+        <span class="logo-pill">🌿 GreenScape Gardens</span>
+        <span class="logo-pill">🔥 Heatwave HVAC</span>
+        <span class="logo-pill">🚿 Bath &amp; Beyond Tiles</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-left">
+          <span class="eyebrow">The problem</span>
+          <h2>You're losing jobs you don't even know about.</h2>
+          <p>When you're on a job, in the van, or just done for the day — your phone doesn't stop. Most of those calls go unanswered. Most of those callers ring the next plumber on Google.</p>
+          <p>That's not a missing call. That's a missing job. Multiplied by every week of the year.</p>
+        </div>
+        <div class="problem-right">
+          <div class="problem-card">
+            <div class="problem-icon red-bg" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v8l4 4" stroke="#E24B4A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="8" stroke="#E24B4A" stroke-width="1.8"/></svg>
+            </div>
+            <div>
+              <strong>Average response time without RingReady</strong>
+              <p class="problem-val red">4.2 hours</p>
+            </div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon green-bg" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10l4.5 4.5L17 5" stroke="#00D68F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <strong>Average response time with RingReady</strong>
+              <p class="problem-val green">Under 60 seconds</p>
+            </div>
+          </div>
+          <div class="problem-card callout">
+            <p>Studies show <strong>78% of customers</strong> book with the first business that responds. Be that business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <span class="eyebrow center">How it works</span>
+      <h2 class="center">Set up in 10 minutes.<br>Running forever after.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-content">
+            <h3>Connect your number</h3>
+            <p>Forward your existing number to RingReady, or get a new one. Works with any phone — mobile, landline, or VOIP.</p>
+          </div>
+        </div>
+        <div class="step-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M15 8l4 4-4 4" stroke="#00D68F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-content">
+            <h3>Tell us about your business</h3>
+            <p>Your trade, your services, your pricing ranges. RingReady learns your business so callers think they're speaking to your own team.</p>
+          </div>
+        </div>
+        <div class="step-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M15 8l4 4-4 4" stroke="#00D68F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-content">
+            <h3>Every call gets answered</h3>
+            <p>Your AI qualifies the lead, books the slot into your calendar, sends confirmations, and notifies you instantly. You just show up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <span class="eyebrow center">What RingReady does</span>
+      <h2 class="center">Everything a receptionist does.<br>At a fraction of the cost.</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 5a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z" stroke="#00D68F" stroke-width="1.6"/><path d="M9 9h4M9 13h2" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Qualifies every lead</h3>
+          <p>Asks the right questions to understand urgency, location, and job type — so you arrive prepared, not guessing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="15" rx="2" stroke="#00D68F" stroke-width="1.6"/><path d="M7 2v4M15 2v4M3 9h16" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Books into your calendar</h3>
+          <p>Syncs with Google Calendar or iCal. No double bookings. No back-and-forth. The slot is taken, the job is yours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4h14a2 2 0 012 2v8a2 2 0 01-2 2H7l-4 3V6a2 2 0 012-2z" stroke="#00D68F" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Sends SMS &amp; WhatsApp</h3>
+          <p>Confirmation messages to the customer. Instant alerts to you. Everyone's in the loop the moment a call ends.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L13.5 9h7L15 13.5l2.5 7L11 16l-6.5 4.5L7 13.5 1.5 9h7z" stroke="#00D68F" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Requests reviews</h3>
+          <p>After job completion, automatically sends a Google Review request. Your rating grows while you sleep.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#00D68F" stroke-width="1.6"/><path d="M11 7v4l3 3" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Handles after-hours calls</h3>
+          <p>Evenings, weekends, bank holidays — RingReady is always on. You'll wake up to booked jobs, not voicemails.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 11l4 4 10-10" stroke="#00D68F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Chases no-shows</h3>
+          <p>Sends automated reminders 24 hours and 1 hour before every appointment. Dramatically cuts no-show rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <span class="eyebrow center">What customers say</span>
+      <h2 class="center">Real businesses. Real results.</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>"I was losing a job a day to voicemail. In the first week with RingReady I booked 6 jobs I would have missed. Paid for itself by Wednesday."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">DM</div>
+            <div>
+              <strong>Dave Mitchell</strong>
+              <span>Mitchell's Plumbing, Manchester</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>"My Google reviews went from 14 to 47 in two months because it sends the review request automatically. Game changer for getting found on Google."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">SR</div>
+            <div>
+              <strong>Sarah Reeves</strong>
+              <span>Bright Spark Electricals, Leeds</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>"I'm a one-man band. I can't answer calls when I'm up a ladder. RingReady books my whole day for me now. Feels like I've got a full-time receptionist."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">TW</div>
+            <div>
+              <strong>Tom Wright</strong>
+              <span>TW Roofing, Birmingham</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <span class="eyebrow center">Pricing</span>
+      <h2 class="center">Less than one missed job per month.</h2>
+      <p class="pricing-sub center">A single booked job pays for a year of RingReady. Everything else is pure profit.</p>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">£49<span>/mo</span></div>
+          <p class="pricing-desc">For solo traders just getting started with AI answering.</p>
+          <ul class="pricing-features">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 100 calls/month</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Calendar booking</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> SMS confirmations</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Instant notifications to you</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> 14-day free trial</li>
+          </ul>
+          <a href="#start" class="btn btn-outline btn-full">Start free trial</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-popular">Most popular</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">£79<span>/mo</span></div>
+          <p class="pricing-desc">For growing trades businesses ready to scale their leads.</p>
+          <ul class="pricing-features">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Unlimited calls</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Calendar booking + reminders</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> SMS + WhatsApp</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Google Review automation</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> No-show chaser</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority support</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> 14-day free trial</li>
+          </ul>
+          <a href="#start" class="btn btn-primary btn-full">Start free trial</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Business</div>
+          <div class="pricing-price">£149<span>/mo</span></div>
+          <p class="pricing-desc">For multi-van operations and teams who need more.</p>
+          <ul class="pricing-features">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Pro</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Multiple staff calendars</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> CRM dashboard</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Custom AI persona &amp; script</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Dedicated onboarding call</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3 3 7-7" stroke="#00D68F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> 14-day free trial</li>
+          </ul>
+          <a href="#start" class="btn btn-outline btn-full">Start free trial</a>
+        </div>
+
+      </div>
+      <p class="pricing-footnote center">All plans include a 14-day free trial. No credit card required to start.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container container-narrow">
+      <span class="eyebrow center">Questions</span>
+      <h2 class="center">Straight answers.</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Will callers know they're talking to an AI?</summary>
+          <p>RingReady is trained to handle calls naturally. Most callers don't know — and most don't care. What they care about is getting answered fast and getting booked. That's what RingReady does.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if a call is too complex for the AI?</summary>
+          <p>For calls outside your scope, RingReady takes a message, gets their details, and sends you an immediate alert so you can call back when you're free. No lead gets dropped.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work with my current phone number?</summary>
+          <p>Yes. You keep your number. RingReady picks up calls that you miss — via call forwarding. Setup takes about 2 minutes.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What calendar apps does it connect to?</summary>
+          <p>Google Calendar and Apple iCal out of the box. More integrations coming. If you use a specific booking tool, get in touch and we'll sort it.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I cancel anytime?</summary>
+          <p>Yes. No lock-in, no cancellation fees. We believe you'll stay because it works — not because we've trapped you.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="start">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Stop losing jobs to voicemail.</h2>
+        <p>Start your free 14-day trial. No credit card. Working in 10 minutes.</p>
+        <form class="cta-form" onsubmit="handleSubmit(event)">
+          <input type="tel" placeholder="Your mobile number" aria-label="Your mobile number" required />
+          <button type="submit" class="btn btn-primary btn-lg">
+            Get started free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <p class="cta-footnote">We'll text you a setup link. Takes 10 minutes. Cancel anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" aria-label="RingReady home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="24" height="24" rx="6" fill="#00D68F"/>
+              <text x="12" y="17" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" fill="#0F1117">R</text>
+            </svg>
+            <span>Ring<strong>Ready</strong></span>
+          </a>
+          <p>The AI front desk for trades and local service businesses. Never miss a job again.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <strong>Product</strong>
+            <a href="#how">How it works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#testimonials">Reviews</a>
+          </div>
+          <div class="footer-col">
+            <strong>Company</strong>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <strong>Legal</strong>
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of service</a>
+            <a href="#">Cookie policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 RingReady. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/getringready" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://tiktok.com/@getringready" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
